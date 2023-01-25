@@ -6,6 +6,8 @@
 //
 import Foundation
 import SwiftUI
+import UIKit
+
 
 struct ShoppingList: View {
     @Environment(\.colorScheme) var colorScheme
@@ -21,6 +23,23 @@ struct ShoppingList: View {
 
     var body: some View {
         VStack {
+            
+            HStack {
+                       Spacer()
+                       Button(action: {
+                           let itemsString = self.items.joined(separator: "\n")
+                           let activityController = UIActivityViewController(activityItems: [itemsString], applicationActivities: nil)
+                           UIApplication.shared.connectedScenes
+                               .filter({$0.activationState == .foregroundActive})
+                               .map({$0 as? UIWindowScene})
+                               .compactMap({$0})
+                               .first?.windows.first?.rootViewController?.present(activityController, animated: true)
+                       }) {
+                           Image(systemName: "square.and.arrow.up")
+                       }
+                       .padding()
+                   }
+            
             HStack {
                 
                 TextField("Add Item", text: $newItem, onCommit: {
@@ -61,11 +80,13 @@ struct ShoppingList: View {
                                 Image(systemName: "circle")
                             }
                         }
+                        
                     }
                 }
                 .onDelete(perform: removeItems)
             }
             if !purchasedItems.isEmpty {
+                
                 Button(action: {
                     self.items.removeAll(where: { self.purchasedItems.contains($0) })
                     self.purchasedItems.removeAll()
@@ -75,6 +96,7 @@ struct ShoppingList: View {
                     Text("Clear Purchased Items")
                 }
             } else {
+                
                 Button(action: {
                     self.showingAlert = true
                 }) {
@@ -96,4 +118,7 @@ struct ShoppingList: View {
         ShoppingListData.saveItems(self.items)
     }
     @State private var newItem = ""
+    
 }
+
+
