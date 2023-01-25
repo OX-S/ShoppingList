@@ -15,6 +15,7 @@
 		F05DA29C295826D500B25688 /* Shopping_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DA29B295826D500B25688 /* Shopping_ListUITests.swift */; };
 		F05DA29E295826D500B25688 /* Shopping_ListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DA29D295826D500B25688 /* Shopping_ListUITestsLaunchTests.swift */; };
 		F05DA2AB2958282C00B25688 /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DA2AA2958282C00B25688 /* ShoppingListView.swift */; };
+		F0BF63F12980D881008AF146 /* ShoppingListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BF63F02980D881008AF146 /* ShoppingListData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		F05DA29B295826D500B25688 /* Shopping_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping_ListUITests.swift; sourceTree = "<group>"; };
 		F05DA29D295826D500B25688 /* Shopping_ListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping_ListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F05DA2AA2958282C00B25688 /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
+		F0BF63F02980D881008AF146 /* ShoppingListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				F05DA282295826D300B25688 /* ContentView.swift */,
 				F05DA284295826D500B25688 /* Assets.xcassets */,
 				F05DA286295826D500B25688 /* Preview Content */,
+				F0BF63F02980D881008AF146 /* ShoppingListData.swift */,
 			);
 			path = "Shopping List";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				F05DA2AB2958282C00B25688 /* ShoppingListView.swift in Sources */,
 				F05DA283295826D300B25688 /* ContentView.swift in Sources */,
 				F05DA281295826D300B25688 /* Shopping_ListApp.swift in Sources */,
+				F0BF63F12980D881008AF146 /* ShoppingListData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

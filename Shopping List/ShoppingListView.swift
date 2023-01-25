@@ -13,8 +13,8 @@ struct ShoppingList: View {
     @State private var purchasedItems: Set<String>
     
     init() {
-        self._items = State(initialValue: Self.loadItems())
-        self._purchasedItems = State(initialValue: Self.loadPurchasedItems())
+        self._items = State(initialValue: ShoppingListData.loadItems())
+        self._purchasedItems = State(initialValue: ShoppingListData.loadPurchasedItems())
     }
 
     var body: some View {
@@ -23,7 +23,7 @@ struct ShoppingList: View {
                 TextField("Add Item", text: $newItem)
                 Button(action: {
                     self.items.append(self.newItem)
-                    Self.saveItems(self.items)
+                    ShoppingListData.saveItems(self.items)
                     self.newItem = ""
                 }) {
                     Image(systemName: "plus")
@@ -38,7 +38,7 @@ struct ShoppingList: View {
                         Spacer()
                         Button(action: {
                             self.purchasedItems.insert(item)
-                            Self.savePurchasedItems(self.purchasedItems)
+                            ShoppingListData.savePurchasedItems(self.purchasedItems)
                         }) {
                             if self.purchasedItems.contains(item) {
                                 Image(systemName: "circle.fill")
@@ -55,38 +55,16 @@ struct ShoppingList: View {
             Button(action: {
                 self.items.removeAll(where: { self.purchasedItems.contains($0) })
                 self.purchasedItems.removeAll()
-                Self.saveItems(self.items)
-                Self.savePurchasedItems(self.purchasedItems)
+                ShoppingListData.saveItems(self.items)
+                ShoppingListData.savePurchasedItems(self.purchasedItems)
             }) {
                 Text("Clear Purchased Items")
             }
         }
     }
-    
     func removeItems(at offsets: IndexSet) {
         items.remove(atOffsets: offsets)
-        Self.saveItems(self.items)
+        ShoppingListData.saveItems(self.items)
     }
-    
     @State private var newItem = ""
-    
-    static func saveItems(_ items: [String]) {
-        let defaults = UserDefaults.standard
-        defaults.set(items, forKey: "items")
-    }
-    
-    static func loadItems() -> [String] {
-        let defaults = UserDefaults.standard
-        return defaults.stringArray(forKey: "items") ?? []
-    }
-    
-    static func savePurchasedItems(_ items: Set<String>) {
-        let defaults = UserDefaults.standard
-        defaults.set(Array(items), forKey: "purchasedItems")
-    }
-    
-    static func loadPurchasedItems() -> Set<String> {
-        let defaults = UserDefaults.standard
-        return Set(defaults.stringArray(forKey: "purchasedItems") ?? [])
-    }
 }
