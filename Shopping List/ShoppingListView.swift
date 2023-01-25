@@ -19,6 +19,18 @@ struct ShoppingList: View {
 
     var body: some View {
         VStack {
+            HStack {
+                TextField("Add Item", text: $newItem)
+                Button(action: {
+                    self.items.append(self.newItem)
+                    Self.saveItems(self.items)
+                    self.newItem = ""
+                }) {
+                    Image(systemName: "plus")
+                }
+            }
+            .padding()
+            
             List {
                 ForEach(items, id: \.self) { item in
                     HStack {
@@ -39,18 +51,6 @@ struct ShoppingList: View {
                 }
                 .onDelete(perform: removeItems)
             }
-            
-            HStack {
-                TextField("Add Item", text: $newItem)
-                Button(action: {
-                    self.items.append(self.newItem)
-                    Self.saveItems(self.items)
-                    self.newItem = ""
-                }) {
-                    Image(systemName: "plus")
-                }
-            }
-            .padding()
             
             Button(action: {
                 self.items.removeAll(where: { self.purchasedItems.contains($0) })
