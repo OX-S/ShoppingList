@@ -11,6 +11,8 @@ struct ShoppingList: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var items: [String]
     @State private var purchasedItems: Set<String>
+    @State private var showingAlert: Bool = false
+    
     
     init() {
         self._items = State(initialValue: ShoppingListData.loadItems())
@@ -20,7 +22,19 @@ struct ShoppingList: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("Add Item", text: $newItem)
+                
+                TextField("Add Item", text: $newItem, onCommit: {
+                    self.items.append(self.newItem)
+                    ShoppingListData.saveItems(self.items)
+                    self.newItem = ""
+                })
+                .padding(.horizontal, 10)
+                .padding(.vertical, 6)
+                .background(Color(.systemGray6))
+                .cornerRadius(10)
+
+                
+                
                 Button(action: {
                     self.items.append(self.newItem)
                     ShoppingListData.saveItems(self.items)
@@ -62,12 +76,17 @@ struct ShoppingList: View {
                 }
             } else {
                 Button(action: {
-                    self.items.removeAll()
-                    self.purchasedItems.removeAll()
-                    ShoppingListData.saveItems(self.items)
-                    ShoppingListData.savePurchasedItems(self.purchasedItems)
+                    self.showingAlert = true
                 }) {
                     Text("Clear List")
+                }
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("Clear List"), message: Text("Are you sure you want to clear the list?"), primaryButton: .destructive(Text("Yes")) {
+                        self.items.removeAll()
+                        self.purchasedItems.removeAll()
+                        ShoppingListData.saveItems(self.items)
+                        ShoppingListData.savePurchasedItems(self.purchasedItems)
+                    }, secondaryButton: .cancel())
                 }
             }
         }
