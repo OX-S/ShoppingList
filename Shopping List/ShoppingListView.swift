@@ -20,11 +20,7 @@ struct ShoppingList: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("Add Item", text: $newItem, onCommit: {
-                            self.items.append(self.newItem)
-                            ShoppingListData.saveItems(self.items)
-                            self.newItem = ""
-                        }).keyboardType(.default)
+                TextField("Add Item", text: $newItem)
                 Button(action: {
                     self.items.append(self.newItem)
                     ShoppingListData.saveItems(self.items)
