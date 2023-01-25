@@ -51,14 +51,24 @@ struct ShoppingList: View {
                 }
                 .onDelete(perform: removeItems)
             }
-            
-            Button(action: {
-                self.items.removeAll(where: { self.purchasedItems.contains($0) })
-                self.purchasedItems.removeAll()
-                ShoppingListData.saveItems(self.items)
-                ShoppingListData.savePurchasedItems(self.purchasedItems)
-            }) {
-                Text("Clear Purchased Items")
+            if !purchasedItems.isEmpty {
+                Button(action: {
+                    self.items.removeAll(where: { self.purchasedItems.contains($0) })
+                    self.purchasedItems.removeAll()
+                    ShoppingListData.saveItems(self.items)
+                    ShoppingListData.savePurchasedItems(self.purchasedItems)
+                }) {
+                    Text("Clear Purchased Items")
+                }
+            } else {
+                Button(action: {
+                    self.items.removeAll()
+                    self.purchasedItems.removeAll()
+                    ShoppingListData.saveItems(self.items)
+                    ShoppingListData.savePurchasedItems(self.purchasedItems)
+                }) {
+                    Text("Clear List")
+                }
             }
         }
     }
