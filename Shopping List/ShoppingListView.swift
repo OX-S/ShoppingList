@@ -31,7 +31,8 @@ struct ShoppingList: View {
                 Spacer()
                 Button(action: {
                     let itemsString = self.items.joined(separator: "\n")
-                    let activityController = UIActivityViewController(activityItems: [itemsString], applicationActivities: nil)
+                    let finalString = "List:\n\n" + itemsString
+                    let activityController = UIActivityViewController(activityItems: [finalString], applicationActivities: nil)
                     UIApplication.shared.connectedScenes
                         .filter({$0.activationState == .foregroundActive})
                         .map({$0 as? UIWindowScene})
