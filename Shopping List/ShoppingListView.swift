@@ -27,7 +27,7 @@ struct ShoppingList: View {
             HStack {
                 Spacer()
 
-                Text("List").font(.system(size: 28)).padding(.bottom, -4.0)
+                Text("List").font(.system(size: 28)).padding(.bottom, -4.0).padding(.trailing, -30.0)
                 Spacer()
                 Button(action: {
                     let itemsString = self.items.joined(separator: "\n")
@@ -41,6 +41,7 @@ struct ShoppingList: View {
                 }) {
                     Image(systemName: "square.and.arrow.up")
                 }
+                .padding(.trailing, 10.0)
                    }
             
             HStack {
