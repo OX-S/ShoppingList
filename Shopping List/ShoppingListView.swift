@@ -25,19 +25,21 @@ struct ShoppingList: View {
         VStack {
             
             HStack {
-                       Spacer()
-                       Button(action: {
-                           let itemsString = self.items.joined(separator: "\n")
-                           let activityController = UIActivityViewController(activityItems: [itemsString], applicationActivities: nil)
-                           UIApplication.shared.connectedScenes
-                               .filter({$0.activationState == .foregroundActive})
-                               .map({$0 as? UIWindowScene})
-                               .compactMap({$0})
-                               .first?.windows.first?.rootViewController?.present(activityController, animated: true)
-                       }) {
-                           Image(systemName: "square.and.arrow.up")
-                       }
-                       .padding()
+                Spacer()
+
+                Text("List").font(.system(size: 28)).padding(.bottom, -4.0)
+                Spacer()
+                Button(action: {
+                    let itemsString = self.items.joined(separator: "\n")
+                    let activityController = UIActivityViewController(activityItems: [itemsString], applicationActivities: nil)
+                    UIApplication.shared.connectedScenes
+                        .filter({$0.activationState == .foregroundActive})
+                        .map({$0 as? UIWindowScene})
+                        .compactMap({$0})
+                        .first?.windows.first?.rootViewController?.present(activityController, animated: true)
+                }) {
+                    Image(systemName: "square.and.arrow.up")
+                }
                    }
             
             HStack {
@@ -52,8 +54,6 @@ struct ShoppingList: View {
                 .background(Color(.systemGray6))
                 .cornerRadius(10)
 
-                
-                
                 Button(action: {
                     self.items.append(self.newItem)
                     ShoppingListData.saveItems(self.items)
@@ -111,6 +111,7 @@ struct ShoppingList: View {
                     }, secondaryButton: .cancel())
                 }
             }
+            Spacer()
         }
     }
     func removeItems(at offsets: IndexSet) {
