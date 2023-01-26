@@ -8,6 +8,12 @@ import Foundation
 import SwiftUI
 import UIKit
 
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
 
 struct ShoppingList: View {
     @Environment(\.colorScheme) var colorScheme
@@ -50,6 +56,7 @@ struct ShoppingList: View {
                     self.items.append(self.newItem)
                     ShoppingListData.saveItems(self.items)
                     self.newItem = ""
+                    UIApplication.shared.endEditing()
                 })
                 .padding(.horizontal, 10)
                 .padding(.vertical, 6)
@@ -121,6 +128,8 @@ struct ShoppingList: View {
         ShoppingListData.saveItems(self.items)
     }
     @State private var newItem = ""
+    
+    
     
 }
 
