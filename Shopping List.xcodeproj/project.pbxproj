@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0241B782983D737003880C9 /* Shopping_List_WatchKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0241B772983D737003880C9 /* Shopping_List_WatchKitApp.swift */; };
+		F0241B7A2983D737003880C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0241B792983D737003880C9 /* ContentView.swift */; };
+		F0241B7C2983D738003880C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0241B7B2983D738003880C9 /* Assets.xcassets */; };
+		F0241B7F2983D738003880C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0241B7E2983D738003880C9 /* Preview Assets.xcassets */; };
+		F0241B822983D738003880C9 /* Shopping List WatchKit Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F0241B752983D737003880C9 /* Shopping List WatchKit Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F05DA281295826D300B25688 /* Shopping_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DA280295826D300B25688 /* Shopping_ListApp.swift */; };
 		F05DA283295826D300B25688 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DA282295826D300B25688 /* ContentView.swift */; };
 		F05DA285295826D500B25688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05DA284295826D500B25688 /* Assets.xcassets */; };
@@ -19,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F0241B802983D738003880C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F05DA275295826D300B25688 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0241B742983D737003880C9;
+			remoteInfo = "Shopping List WatchKit Watch App";
+		};
 		F05DA28E295826D500B25688 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F05DA275295826D300B25688 /* Project object */;
@@ -35,7 +47,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F0241B832983D738003880C9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F0241B822983D738003880C9 /* Shopping List WatchKit Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F0241B752983D737003880C9 /* Shopping List WatchKit Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List WatchKit Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0241B772983D737003880C9 /* Shopping_List_WatchKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping_List_WatchKitApp.swift; sourceTree = "<group>"; };
+		F0241B792983D737003880C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F0241B7B2983D738003880C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0241B7E2983D738003880C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F05DA27D295826D300B25688 /* Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05DA280295826D300B25688 /* Shopping_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping_ListApp.swift; sourceTree = "<group>"; };
 		F05DA282295826D300B25688 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +82,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F0241B722983D737003880C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F05DA27A295826D300B25688 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,12 +113,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0241B762983D737003880C9 /* Shopping List WatchKit Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				F0241B772983D737003880C9 /* Shopping_List_WatchKitApp.swift */,
+				F0241B792983D737003880C9 /* ContentView.swift */,
+				F0241B7B2983D738003880C9 /* Assets.xcassets */,
+				F0241B7D2983D738003880C9 /* Preview Content */,
+			);
+			path = "Shopping List WatchKit Watch App";
+			sourceTree = "<group>";
+		};
+		F0241B7D2983D738003880C9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F0241B7E2983D738003880C9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		F05DA274295826D300B25688 = {
 			isa = PBXGroup;
 			children = (
 				F05DA27F295826D300B25688 /* Shopping List */,
 				F05DA290295826D500B25688 /* Shopping ListTests */,
 				F05DA29A295826D500B25688 /* Shopping ListUITests */,
+				F0241B762983D737003880C9 /* Shopping List WatchKit Watch App */,
 				F05DA27E295826D300B25688 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +149,7 @@
 				F05DA27D295826D300B25688 /* Shopping List.app */,
 				F05DA28D295826D500B25688 /* Shopping ListTests.xctest */,
 				F05DA297295826D500B25688 /* Shopping ListUITests.xctest */,
+				F0241B752983D737003880C9 /* Shopping List WatchKit Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +195,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F0241B742983D737003880C9 /* Shopping List WatchKit Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0241B862983D738003880C9 /* Build configuration list for PBXNativeTarget "Shopping List WatchKit Watch App" */;
+			buildPhases = (
+				F0241B712983D737003880C9 /* Sources */,
+				F0241B722983D737003880C9 /* Frameworks */,
+				F0241B732983D737003880C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Shopping List WatchKit Watch App";
+			productName = "Shopping List WatchKit Watch App";
+			productReference = F0241B752983D737003880C9 /* Shopping List WatchKit Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F05DA27C295826D300B25688 /* Shopping List */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F05DA2A1295826D500B25688 /* Build configuration list for PBXNativeTarget "Shopping List" */;
@@ -143,10 +219,12 @@
 				F05DA279295826D300B25688 /* Sources */,
 				F05DA27A295826D300B25688 /* Frameworks */,
 				F05DA27B295826D300B25688 /* Resources */,
+				F0241B832983D738003880C9 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F0241B812983D738003880C9 /* PBXTargetDependency */,
 			);
 			name = "Shopping List";
 			productName = "Shopping List";
@@ -199,6 +277,9 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					F0241B742983D737003880C9 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					F05DA27C295826D300B25688 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -228,11 +309,21 @@
 				F05DA27C295826D300B25688 /* Shopping List */,
 				F05DA28C295826D500B25688 /* Shopping ListTests */,
 				F05DA296295826D500B25688 /* Shopping ListUITests */,
+				F0241B742983D737003880C9 /* Shopping List WatchKit Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F0241B732983D737003880C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0241B7F2983D738003880C9 /* Preview Assets.xcassets in Resources */,
+				F0241B7C2983D738003880C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F05DA27B295826D300B25688 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +350,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F0241B712983D737003880C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0241B7A2983D737003880C9 /* ContentView.swift in Sources */,
+				F0241B782983D737003880C9 /* Shopping_List_WatchKitApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F05DA279295826D300B25688 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +390,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F0241B812983D738003880C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0241B742983D737003880C9 /* Shopping List WatchKit Watch App */;
+			targetProxy = F0241B802983D738003880C9 /* PBXContainerItemProxy */;
+		};
 		F05DA28F295826D500B25688 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F05DA27C295826D300B25688 /* Shopping List */;
@@ -303,6 +408,66 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		F0241B842983D738003880C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Shopping List WatchKit Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = LDDX62NH57;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Shopping List WatchKit";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.finnkliewer.Shopping-List";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.finnkliewer.Shopping-List.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		F0241B852983D738003880C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Shopping List WatchKit Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = LDDX62NH57;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Shopping List WatchKit";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.finnkliewer.Shopping-List";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.finnkliewer.Shopping-List.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
 		F05DA29F295826D500B25688 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -420,6 +585,7 @@
 		F05DA2A2295826D500B25688 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +615,7 @@
 		F05DA2A3295826D500B25688 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -554,6 +721,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F0241B862983D738003880C9 /* Build configuration list for PBXNativeTarget "Shopping List WatchKit Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0241B842983D738003880C9 /* Debug */,
+				F0241B852983D738003880C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F05DA278295826D300B25688 /* Build configuration list for PBXProject "Shopping List" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

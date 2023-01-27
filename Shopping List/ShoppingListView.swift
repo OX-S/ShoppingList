@@ -14,6 +14,8 @@ extension UIApplication {
     }
 }
 
+//    WatchKit Branch
+
 
 struct ShoppingList: View {
     @Environment(\.colorScheme) var colorScheme
@@ -27,7 +29,6 @@ struct ShoppingList: View {
         self._purchasedItems = State(initialValue: ShoppingListData.loadPurchasedItems())
     }
 
-//    WatchKit Branch
     var body: some View {
         VStack {
             
