@@ -20,6 +20,8 @@ struct ShoppingList: View {
     @State private var items: [String]
     @State private var purchasedItems: Set<String>
     @State private var showingAlert: Bool = false
+    @State private var showingDuplicateAlert: Bool = false
+
     
     
     init() {
@@ -53,9 +55,16 @@ struct ShoppingList: View {
             HStack {
                 
                 TextField("Add Item", text: $newItem, onCommit: {
-                    self.items.append(self.newItem)
-                    ShoppingListData.saveItems(self.items)
-                    self.newItem = ""
+                    if self.newItem.isEmpty {
+                        return
+                    } else if self.items.contains(self.newItem) {
+                        self.showingDuplicateAlert = true
+
+                    } else {
+                        self.items.append(self.newItem)
+                        ShoppingListData.saveItems(self.items)
+                        self.newItem = ""
+                    }
                     UIApplication.shared.endEditing()
                 })
                 .padding(.horizontal, 10)
@@ -64,12 +73,23 @@ struct ShoppingList: View {
                 .cornerRadius(10)
 
                 Button(action: {
-                    self.items.append(self.newItem)
-                    ShoppingListData.saveItems(self.items)
-                    self.newItem = ""
+                    if self.newItem.isEmpty {
+                        return
+                    } else if self.items.contains(self.newItem) {
+                        self.showingDuplicateAlert = true
+
+                    } else {
+                        self.items.append(self.newItem)
+                        ShoppingListData.saveItems(self.items)
+                        self.newItem = ""
+                    }
                 }) {
                     Image(systemName: "plus")
                 }
+                .alert(isPresented: $showingDuplicateAlert) {
+                    Alert(title: Text("Item already in list"), message: Text("\"\(self.newItem)\" is already in your list."), dismissButton: .default(Text("OK")))
+                }
+
             }
             .padding()
             
