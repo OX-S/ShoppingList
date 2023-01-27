@@ -98,8 +98,13 @@ struct ShoppingList: View {
                     HStack {
                         Text(item)
                         Spacer()
+ 
                         Button(action: {
-                            self.purchasedItems.insert(item)
+                            if self.purchasedItems.contains(item) {
+                                self.purchasedItems.remove(item)
+                            } else {
+                                self.purchasedItems.insert(item)
+                            }
                             ShoppingListData.savePurchasedItems(self.purchasedItems)
                         }) {
                             if self.purchasedItems.contains(item) {
@@ -107,9 +112,9 @@ struct ShoppingList: View {
                                     .foregroundColor(.green)
                             } else {
                                 Image(systemName: "circle")
+                                    .foregroundColor(.blue)
                             }
                         }
-                        
                     }
                 }
                 .onDelete(perform: removeItems)
@@ -117,7 +122,7 @@ struct ShoppingList: View {
             if !purchasedItems.isEmpty {
                 
                 Button(action: {
-                    self.items.removeAll(where: { self.purchasedItems.contains($0) })
+                    self.items = self.items.filter { !self.purchasedItems.contains($0) }
                     self.purchasedItems.removeAll()
                     ShoppingListData.saveItems(self.items)
                     ShoppingListData.savePurchasedItems(self.purchasedItems)
